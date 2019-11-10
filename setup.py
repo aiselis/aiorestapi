@@ -62,10 +62,10 @@ setup(
     author='Alessio Pinna',
     author_email='alessio@aiselis.com',
     maintainer='Alessio Pinna <alessio@aiselis.com>',
-    url='https://github.com/aiselis/aiorest',
+    url='https://github.com/aiselis/aiorestapi',
     project_urls={
-        'Bug Reports': 'https://github.com/aiselis/aiorest/issues',
-        'Source': 'https://github.com/aiselis/aiorest',
+        'Bug Reports': 'https://github.com/aiselis/aiorestapi/issues',
+        'Source': 'https://github.com/aiselisapi/aiorest',
     },
     license='Apache 2',
     packages=['aiorestapi'],
