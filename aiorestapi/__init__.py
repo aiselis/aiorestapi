@@ -16,7 +16,7 @@
 from .views import RestView
 from .routers import RouteRestTableDef
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 __all__ = (
     'RestView',
