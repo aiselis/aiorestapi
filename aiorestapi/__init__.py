@@ -1,5 +1,5 @@
 #
-#    Copyright 2019 Alessio Pinna <alessio@aiselis.com>
+#    Copyright 2019 Alessio Pinna <alessio.pinna@aiselis.com>
 #
 #    Licensed under the Apache License, Version 2.0 (the "License");
 #    you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 from .views import RestView
 from .routers import RouteRestTableDef
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 __all__ = (
     'RestView',
