@@ -13,7 +13,7 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-from aiohttp.web import Response, StreamResponse, HTTPMethodNotAllowed
+from aiohttp.web import Response, Request, StreamResponse, HTTPMethodNotAllowed
 from aiohttp.abc import AbstractView
 from aiohttp import hdrs
 from typing import Generator, Any
@@ -21,6 +21,11 @@ import json
 
 
 class RestView(AbstractView):
+
+    def __init__(self, request: Request) -> None:
+        for item in request.app:
+            setattr(self, item, request.app[item])
+        self._request = request
 
     async def _iter(self) -> StreamResponse:
         if self.request.method not in hdrs.METH_ALL:
@@ -30,7 +35,7 @@ class RestView(AbstractView):
         else:
             method_name = "on_" + self.request.method.lower() + "_collection"
         method = getattr(self, method_name, None)
-        if method is None:
+        if not method:
             self._raise_allowed_methods()
         parameters = dict(**self.request.match_info, **self.request.query)
         if self.request.body_exists:
