@@ -31,7 +31,7 @@ class RestResource(RestView):
 
     # example call: GET <server>/views/80
     async def on_get_item(self, id: str) -> dict:
-        return {"id": int(id), "value": 1}
+        return self.key
 
     # example call: POST to <server>/views
     async def on_post_collection(self, body: dict) -> dict:
@@ -40,6 +40,7 @@ class RestResource(RestView):
 
 app = web.Application()
 app.add_routes(routes)
+app['key'] = [1, 2, 4, 5]
 
 if __name__ == '__main__':
     web.run_app(app)
@@ -60,6 +61,7 @@ Notes
 - The query parameters are automatically converted into parameters of the view method.
 - If requests have a body it is necessary to specify in the method a parameter called 'body'
 - If requests are to the single item it is necessary to specify a parameter called 'id'
+- The items stored as 'app[<key>]' are accessible into view as properties 'self.<key>'
 
 To Do
 -----

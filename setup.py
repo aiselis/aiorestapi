@@ -1,5 +1,5 @@
 #
-#    Copyright 2019 Alessio Pinna <alessio@aiselis.com>
+#    Copyright 2019 Alessio Pinna <alessio.pinna@aiselis.com>
 #
 #    Licensed under the Apache License, Version 2.0 (the "License");
 #    you may not use this file except in compliance with the License.
@@ -60,12 +60,12 @@ setup(
         'Framework :: AsyncIO',
     ],
     author='Alessio Pinna',
-    author_email='alessio@aiselis.com',
-    maintainer='Alessio Pinna <alessio@aiselis.com>',
+    author_email='alessio.pinna@aiselis.com',
+    maintainer='Alessio Pinna <alessio.pinna@aiselis.com>',
     url='https://github.com/aiselis/aiorestapi',
     project_urls={
         'Bug Reports': 'https://github.com/aiselis/aiorestapi/issues',
-        'Source': 'https://github.com/aiselisapi/aiorest',
+        'Source': 'https://github.com/aiselis/aiorestapi',
     },
     license='Apache 2',
     packages=['aiorestapi'],
